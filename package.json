@@ -1,10 +1,24 @@
 {
-  "name": "study",
+  "name": "study66",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "config": {
+    "port": "3000"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "pretest": "echo \"$USERNAME\" ",
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "dev": "echo \"devdevdevdevdevdev\"",
+    "test:dev": "npm-run-all --parallel test dev",
+    "test:dev2": "npm run test && npm run dev",
+    "client:dev": "webpack --mode development",
+    "cient:prod": "webpack --mode production",
+    "server:start": "cross-env NODE_ENV=development supervisor ./app.js",
+    "server:dev": "cross-env NODE_ENV=development supervisor ./app.js",
+    "server:prod": "cross-env NODE_ENV=development supervisor ./app.js",
+    "server:hint": "cross-env NODE_ENV=development supervisor ./app.js",
+    "docs": "jsdoc ./**/*.js -d ./docs/jsdocs"
   },
   "repository": {
     "type": "git",
@@ -18,6 +32,11 @@
   },
   "homepage": "https://github.com/chenlang0311/study#readme",
   "devDependencies": {
-    "shelljs": "^0.8.3"
+    "npm-run-all": "^4.1.5",
+    "postcss-rem2rpx": "^1.0.1",
+    "scripty": "^1.9.1",
+    "shelljs": "^0.8.3",
+    "vue-cli": "^2.9.6",
+    "yargs-parser": "^13.1.1"
   }
 }
